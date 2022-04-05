@@ -434,7 +434,6 @@ GameObject:
   - component: {fileID: 313582331}
   - component: {fileID: 313582332}
   - component: {fileID: 313582333}
-  - component: {fileID: 313582334}
   m_Layer: 0
   m_Name: ball
   m_TagString: Untagged
@@ -576,18 +575,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f82a10021ca324e883be7ae2d3ad53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &313582334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313582327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b44c80b59fe7cdb43b8c1de7e8dc2bde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  enemies: {fileID: 228404390}
+  nextSceneIndex: 3
 --- !u!1 &398526508
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +588,7 @@ GameObject:
   - component: {fileID: 398526509}
   - component: {fileID: 398526511}
   - component: {fileID: 398526510}
+  - component: {fileID: 398526512}
   m_Layer: 0
   m_Name: catapult
   m_TagString: Untagged
@@ -692,6 +682,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!68 &398526512
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398526508}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -12.59891, y: -3.5802896}
+  - {x: 12.969285, y: -3.5802898}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &496835721
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,7 +2472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1553233198}
-  - component: {fileID: 1553233197}
+  - component: {fileID: 1553233199}
   m_Layer: 0
   m_Name: ground
   m_TagString: ground
@@ -2468,29 +2480,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!68 &1553233197
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553233196}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -13.729727, y: -2.7766092}
-  - {x: 0.014238864, y: -2.8103228}
-  - {x: 15.0363655, y: -2.7357767}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!4 &1553233198
 Transform:
   m_ObjectHideFlags: 0
@@ -2511,6 +2500,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &1553233199
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553233196}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -12.845826, y: -1.9753321}
+  - {x: 12.845826, y: -1.851874}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1661113848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,6 +2873,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7094739648346431576, guid: 5bdc6ed526cfba742976173785a7880c, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7094739648346431577, guid: 5bdc6ed526cfba742976173785a7880c, type: 3}
       propertyPath: m_Pivot.x
       value: 0

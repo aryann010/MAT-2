@@ -2,15 +2,15 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Exit : MonoBehaviour
+public class exit : MonoBehaviour
 {
     public Button exitButton;
 
     private void Awake()
     {
-        exitButton.onClick.AddListener(exit);
+        exitButton.onClick.AddListener(Exit);
     }
-    private void exit()
+    private void Exit()
     {
 
         SceneManager.LoadScene(0);
