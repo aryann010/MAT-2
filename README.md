@@ -22,7 +22,13 @@ POWER-UPS
  2) If player fails to take a good shot over the setup and if countdown timer reaches 8 seconds or below, player will get a power card where he will get another shot  to shoot at the setup with 3 seconds increase in timer as well.
 ->Only one Power-up card will be available at any given level according to the situation in the game.
 .
-https://youtu.be/kd0havIwQj8
+
+
+
+https://user-images.githubusercontent.com/68263617/163217880-5b4b3d2d-3e72-4d50-a39c-db93a47832b3.mp4
+
+
+
 
 -INFINITE MODE, created using "Object Pooling", where player can endlessly throw any number of fireballs to take down the bird.
 
@@ -34,7 +40,7 @@ https://youtu.be/kd0havIwQj8
 -Same concept is applied for Bird's object pool.
 -Apart from setting the lifespan, code performs Enqueue operation if bird gameobject dies(upon colliding with fireball) and then it waits for 3 seconds after which it Dequeue's the same bird's gameobject and instantiate over the scene.
 
-https://youtu.be/i-p75elfwhI
+https://user-images.githubusercontent.com/68263617/163217409-e4db5f49-1538-4f64-8d15-665c091d06d6.mp4
 
 If Object Pool pattern was not used here then
 -We would be instantiating the fireball gameobject when scene loads and when that gameobject gets destroyed or maybe hits the ground then we have to specify a condition where that same game object is getting reused again to instantiate it over the catapult (also changing the animation state of fireball gameobject from blasted to idle).
