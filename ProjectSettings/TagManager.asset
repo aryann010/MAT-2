@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ground
   - groundb
+  - normal
+  - fireball
   layers:
   - Default
   - TransparentFX
