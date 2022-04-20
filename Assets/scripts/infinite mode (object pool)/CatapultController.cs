@@ -12,6 +12,7 @@ public class CatapultController : MonoBehaviour
     public Button button;
     public Rigidbody2D rgbdy;
     public GameObject enemy;
+    public RockPool rockpoolScript;
    
 
     private void OnEnable()
@@ -22,8 +23,8 @@ public class CatapultController : MonoBehaviour
     {
        
         
-           if(RockPool.Instance.isInstantiated!=true)
-            if (RockPool.Instance.isReleased == true)
+           if(rockpoolScript.isInstantiated!=true)
+            if (rockpoolScript.isReleased == true)
             {
                 instantiateRock();
            }
@@ -33,8 +34,8 @@ public class CatapultController : MonoBehaviour
     
     private void instantiateRock()
     {
-        RockPool.Instance.isInstantiated = true;
-        var shot = RockPool.Instance.get();
+        rockpoolScript.isInstantiated = true;
+        var shot = rockpoolScript.get();
         SpringJoint2D sprng = shot.gameObject.GetComponent<SpringJoint2D>();
         sprng.connectedBody = rgbdy;
         rockData.enemies = enemy;

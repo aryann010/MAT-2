@@ -12,6 +12,7 @@ public class projectile : MonoBehaviour
     private int i;
     private Rigidbody2D rb;
     private SpringJoint2D springJoint;
+
     private bool isPressed;
     private Animator anim;
     public powerupsController puController;
@@ -25,6 +26,7 @@ public class projectile : MonoBehaviour
         springJoint = GetComponent<SpringJoint2D>();
         i = nextSceneIndex;
         anim = gameObject.GetComponent<Animator>();
+  
     }
 
     void Update()
@@ -42,8 +44,8 @@ public class projectile : MonoBehaviour
   
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        if (this.gameObject.tag == "normal")  //for infinite mode
+       
+        if (this.gameObject.tag == "fireball")  
         {
             anim.SetBool("isCollide", true);
         }
@@ -64,7 +66,7 @@ public class projectile : MonoBehaviour
       
         
       //  selectionController.isShotTaken = true;
-        if (this.gameObject.tag == "normal")            //"normal" for infinite mode otherwise "fireball"
+        if (this.gameObject.tag == "fireball")           
         {
             anim.SetBool("isThrow", true);
         }
@@ -80,15 +82,20 @@ public class projectile : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
         GetComponent<SpringJoint2D>().enabled = false;
         yield return new WaitForSeconds(1f);
-        RockPool.Instance.isReleased = true;
-        RockPool.Instance.isInstantiated = false;
+        if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            RockPool.Instance.isReleased = true;
+            RockPool.Instance.isInstantiated = false;
+        }
     }
   
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(2f);
-
-       // SceneManager.LoadScene(i);                           //disabled for infinite mode
+        if (SceneManager.GetActiveScene().buildIndex != 5)
+        {
+            SceneManager.LoadScene(i);
+        }
     }
 }
 

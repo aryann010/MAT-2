@@ -244,6 +244,7 @@ MonoBehaviour:
   button: {fileID: 0}
   rgbdy: {fileID: 1847689886}
   enemy: {fileID: 0}
+  rockpoolScript: {fileID: 1553233200}
 --- !u!1 &496835721
 GameObject:
   m_ObjectHideFlags: 0
