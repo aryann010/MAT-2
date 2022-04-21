@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -34,5 +35,9 @@ public class SelectionController : MonoBehaviour
             normalGO.SetActive(false);
             fireballGO.SetActive(true);
         }
+    }
+    public void exit()
+    {
+        SceneManager.LoadScene(0);
     }
 }

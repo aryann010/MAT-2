@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5881618723330919840}
   m_Layer: 0
   m_Name: BirdEnemyFlapSprite
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,7 @@ Rigidbody2D:
   m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -164,4 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2844f9c8d23236f4198680f9a35b878c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveRight: 1
+  moveSpeed: 2
   particle: {fileID: 3482047566896959487, guid: 3810ec5fc0b07db48bca7052d644f39b, type: 3}
+  rgbd: {fileID: 0}
+  killNumber: 0
