@@ -8,6 +8,7 @@ TagManager:
   - groundb
   - normal
   - fireball
+  - enemy
   layers:
   - Default
   - TransparentFX
