@@ -18,7 +18,9 @@ public class projectile : MonoBehaviour
     public powerupsController puController;
    public SelectionController selectionController;
     private CatapultController catapultController;
-   
+    public delegate void PlayerKillSreakEvent(int killNumber);
+    public event PlayerKillSreakEvent OnPlayerKillingStreak;
+
 
     void Start()
     {
@@ -54,7 +56,10 @@ public class projectile : MonoBehaviour
     {
         if (collision.gameObject.tag == "ground"&&anim.GetBool("isCollide")==false)
         {
-            catapultController.missCount++;
+            // catapultController.missCount++;
+            catapultController.reset();
+            
+          //  OnPlayerKillingStreak(0);
 
         }
 

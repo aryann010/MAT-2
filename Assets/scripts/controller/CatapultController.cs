@@ -15,23 +15,28 @@ public class CatapultController : MonoBehaviour
     public RockPool rockpoolScript;
     public delegate void PlayerKillSreakEvent(int killNumber);
     public event PlayerKillSreakEvent OnPlayerKillingStreak;
-    public int missCount = 0;
+   // public int missCount = 0;
     public int killNumber = 0;
 
     public void enemyHit(int number)
     {
         
-        if (OnPlayerKillingStreak != null && missCount == 0)
+        if (OnPlayerKillingStreak != null)// && missCount == 0)
         {
             killNumber += number;
             OnPlayerKillingStreak(killNumber);
         }
-        else
-        {
-            missCount = 0;
-            killNumber = 0;
-            OnPlayerKillingStreak(killNumber);
-        }
+       // else
+      //  {
+          //  missCount = 0;
+      //      killNumber = 0;
+      //      OnPlayerKillingStreak(killNumber);
+      //  }
+    }
+    public void reset()
+    {
+        this.killNumber = 0;
+        OnPlayerKillingStreak(0);
     }
     private void OnEnable()
     {
